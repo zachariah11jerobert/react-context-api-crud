@@ -20,12 +20,13 @@ export const EditUser = (props) => {
   }, [currentUserId, users]);
 
   const onSubmit = () => {
-   
+    //console.log(selectedUser)
+    editUser(selectedUser);
     history.push("/");
   };
 
   const onChange = (e) => {
-  
+    setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value });
   };
 
   return (
@@ -34,6 +35,7 @@ export const EditUser = (props) => {
         <Label>Name</Label>
         <Input
           type="text"
+          name="name"
           value={selectedUser.name}
           onChange={onChange}
           placeholder="Enter Name"
