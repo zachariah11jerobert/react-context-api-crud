@@ -15,7 +15,7 @@ export const EditUser = (props) => {
 
   useEffect(() => {
     const userId = currentUserId;
-    const selectedUser = users.find((user) => user.id === Number(userId));
+    const selectedUser = users.find((user) => user.id === userId);
     setSelectedUser(selectedUser);
   }, [currentUserId, users]);
 
