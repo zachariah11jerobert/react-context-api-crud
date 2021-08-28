@@ -25,8 +25,21 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const addUser = (user) => {
+    dispatch({
+      type: "ADD_USER",
+      payload: user,
+    });
+  };
+
   return (
-    <GlobalContext.Provider value={{ users: state.users, removeUser }}>
+    <GlobalContext.Provider
+      value={{
+        users: state.users,
+        removeUser,
+        addUser,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
