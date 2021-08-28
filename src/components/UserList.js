@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ListGroup, ListGroupItem, Button } from "reactstrap";
 
 export const UserList = () => {
-    const {users}=useContext(GlobalContext);
+    const {users,removeUser}=useContext(GlobalContext);
     console.log(users)
   return (
     <ListGroup className="mt-4">
@@ -16,7 +16,7 @@ export const UserList = () => {
               <Link className="btn btn-warning mr-1" to={`/edit/${user.id}`}>
                 Edit
               </Link>
-              <Button color="danger">Delete</Button>
+              <Button onClick={()=>removeUser(user.id)} color="danger">Delete</Button>
             </div>
           </ListGroupItem>
         ))}
